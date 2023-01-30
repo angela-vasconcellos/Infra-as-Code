@@ -1,4 +1,4 @@
-<h1 align="center">DESAFIO  4 - CONTAINERIZAÇÃO & DEVOPS (CI & CD)</h1>
+<h1 align="center">CONTAINERIZAÇÃO & DEVOPS (CI & CD)</h1>
 
 <p align="justify">Criação de Infraestrutura por código no GCP, a fim de executar as APIs.</p>
 
