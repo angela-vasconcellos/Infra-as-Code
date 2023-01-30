@@ -1,0 +1,100 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: name-deployment-1
+  labels:
+    app: name-api-1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: name-api-1
+      name: webapp 
+  template:
+    metadata:
+      labels:
+        app: name-api-1
+        name: webapp
+    spec:
+      containers:
+      - name: name-api-1-container
+        image: imagem
+        ports:
+        - containerPort: 5000
+
+---
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: name-deployment-2
+    labels:
+      app: name-api-2
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: name-api-2
+        name: webapp
+    template:
+      metadata:
+        labels:
+          app: name-api-2
+          name: webapp
+      spec:
+        containers:
+        - name: name-api-2
+          image: imagem
+          ports:
+            - containerPort: 5001
+
+---
+
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: name-deployment-3
+    labels:
+      app: name-api-3
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: name-api-3
+        name: webapp
+    template:
+      metadata:
+        labels:
+          app: name-api-3
+          name: webapp
+      spec:
+        containers:
+        - name: name-api-3
+          image: imagem
+          ports:
+            - containerPort: 5002
+
+---
+
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: name-deployment-4
+    labels:
+      app: name-api-4
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: name-api-4
+        name: webapp
+    template:
+      metadata:
+        labels:
+          app: name-api-4
+          name: webapp
+      spec:
+        containers:
+        - name: name-api-4
+          image: imagem
+          ports:
+            - containerPort: 5003
