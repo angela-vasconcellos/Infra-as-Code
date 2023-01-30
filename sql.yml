@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: db
+  name: db
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      containers:
+      - image: imagem
+        name: db
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: valor
+        ports:
+        - containerPort: 3306
+          name: db
+        volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: db-data
+      volumes:
+      - name: db-data
+        emptyDir: {}
+
+  
+---
+#TENTATIVA - DEPLOY SQL GERENCIADOR
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gke
+spec:
+  selector:
+    matchLabels:
+      app: gke-cloud-sql-app
+  template:
+    metadata:
+      labels:
+        app: gke-cloud-sql-app
+    spec:
+      serviceAccountName:name
+      containers:
+      - name: gke-cloud-sql-app
+ 
+        image: image
+
+        ports:
+        - containerPort: 5000
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: 
+        - name: PORT
+        - name: DB_PORT
+          value: "3306"
+      - name: cloud-sql-proxy
+
+        image: image
+        command:
+          - "/cloud_sql_proxy"
+
+          - "-ip_address_types=PRIVATE"
+          - "-instances=project:region:database-name=tcp:3306"
+        securityContext:
+
+          runAsNonRoot: true
