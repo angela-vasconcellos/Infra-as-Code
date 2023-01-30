@@ -1,0 +1,51 @@
+#Regras do ingress
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /name1
+        pathType: Prefix
+        backend:
+          service:
+            name: svc-api-1
+            port:
+              number: 5000
+      - path: /name2
+        pathType: Prefix
+        backend:
+          service:
+            name: svc-api-2
+            port:
+              number: 5001
+      - path: /name3
+        pathType: Prefix
+        backend:
+          service:
+            name: svc-api-3
+            port:
+              number: 5002
+      - path: /name4
+        pathType: Prefix
+        backend:
+          service:
+            name: svc-api-4
+            port:
+              number: 5002
+      - path: /name5
+        pathType: Prefix
+        backend:
+          service:
+            name: svc-api-5
+            port:
+              number: 5003
+      - path: /name6
+        pathType: Prefix
+        backend:
+          service:
+            name: svc-api-6
+            port:
+              number: 5003
