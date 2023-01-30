@@ -1,0 +1,47 @@
+#Configmap 1
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-name
+data:
+  MYSQL_DATABASE_USER: " "
+  MYSQL_DATABASE_PASSWORD: " "
+  MYSQL_DATABASE_DB: " "
+  MYSQL_DATABASE_HOST: "name.namespace.svc.cluster.local"
+---
+
+#Configmap 2
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-name
+data:
+  MYSQL_DATABASE_USER: " "
+  MYSQL_DATABASE_PASSWORD: " "
+  MYSQL_DATABASE_DB: " "
+  MYSQL_DATABASE_HOST: "name.namespace.svc.cluster.local"
+---
+
+#Configmap 3
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-name
+data:
+  MYSQL_DATABASE_USER: " "
+  MYSQL_DATABASE_PASSWORD: " "
+  MYSQL_DATABASE_DB: " "
+  MYSQL_DATABASE_HOST: "name.namespace.svc.cluster.local"
+---
+
+#Configmap 4
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-name
+data:
+  MYSQL_DATABASE_USER: " "
+  MYSQL_DATABASE_PASSWORD: " "
+  MYSQL_DATABASE_DB: " "
+  MYSQL_DATABASE_HOST: "name.namespace.svc.cluster.local"
+  
